@@ -8,6 +8,7 @@ const info = async() => {
     return dados;
 }
 
+
 function createP(text, container) {
     const p = document.createElement("p")
     p.innerText = text;
@@ -15,23 +16,42 @@ function createP(text, container) {
 
 }
 
+function createElements(dados, pesquisa) {
+    let hasItem = false;
+    for (let dado in dados) {
+        let find = false;
+        const dadosList = dados[dado]
+        const div = document.createElement("div");
+        const h2 = document.createElement("h2")
+        h2.innerText = "peliculas compatives para " + dado;
+        div.appendChild(h2)
+        cont.appendChild(div);
+        dadosList.forEach((el, index) => {   
+            if (el.includes(pesquisa)) {
+                find = true;
+                hasItem = true;
+                createP(el,div);
+            }
+        });
+        if (!find) {
+            div.remove();
+        }
+    }
+    return hasItem; 
+}
 
 async function handleClick(event) {
     event.preventDefault();
     cont.innerHTML = "";
-    const pesquisa = input.value.toUpperCase();;
-    console.log(pesquisa)
+    const valor = input.value.toUpperCase();;
     const dados = await info();
-    for (let dado in dados) {
-        const dadosList = dados[dado]
-        const div = document.createElement("div");
-        div.innerText = "peliculas compatives para " + dado;
-        cont.appendChild(div);
-        dadosList.forEach(el => {   
-            if (el.includes(pesquisa)) {
-                createP(el,div);
-            } 
-        });
-    } 
+    if (!createElements(dados,valor)) {
+        const msg = document.createElement("p");
+        msg.innerText = "Nenhum resultado encontrado";
+        msg.classList.add("notFound");
+        cont.appendChild(msg)
+    };
 }
+
 form.addEventListener("submit", handleClick)
+window.addEventListener("DOMContentLoaded", handleClick)

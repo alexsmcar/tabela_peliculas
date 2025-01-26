@@ -1,0 +1,47 @@
+.main {
+    max-width: 1200px;
+    margin: 0 auto
+}
+
+#form {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 10px;
+}
+
+#pesquisa {
+    font-size: 1.5rem;
+    border-radius: 4px 0 0 4px;
+    padding: 5px 10px;
+    background: #ededed;
+}
+
+#cont > div {
+    margin-bottom: 15px;
+    background: #f9f9f9;
+}
+#cont > div h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    padding: 10px 0;
+    background: #0054aa;
+    color: #fff;
+    border-radius: 4px 4px 0 0;
+
+}
+#cont > div p {
+    padding: 15px 25px;
+}
+#cont > div p + p {
+   border-top: 1.5px solid #e0e0e0;
+}
+
+.notFound {
+    text-align: center;
+}
+
+.btn_pesquisa {
+    background: #656565;
+    border-radius: 0 4px 4px 0;
+}
