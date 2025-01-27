@@ -64,6 +64,7 @@
     outline: none;
 }
 
+
 @media (max-width: 550px) {
     .form_container {
         justify-content: center;
