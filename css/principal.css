@@ -2,18 +2,30 @@
     max-width: 1200px;
     margin: 0 auto
 }
-
-#form {
+.form_container {
     display: flex;
-    justify-content: end;
+    justify-content: end
+}
+#form {
     margin-bottom: 10px;
+}
+
+.input_container {
+    display: flex;
+    background: #EDEDED;
+    padding: 5px 15px;
+    border-radius: 50px;
+}
+
+.input_container.focus {
+    background: #ffffff;
 }
 
 #pesquisa {
     font-size: 1.5rem;
-    border-radius: 4px 0 0 4px;
     padding: 5px 10px;
-    background: #ededed;
+    font-family: "Roboto";
+    background: #EDEDED;
 }
 
 #cont > div {
@@ -28,6 +40,7 @@
     background: #0054aa;
     color: #fff;
     border-radius: 4px 4px 0 0;
+    font-weight: 400;
 
 }
 #cont > div p {
@@ -42,6 +55,21 @@
 }
 
 .btn_pesquisa {
-    background: #656565;
-    border-radius: 0 4px 4px 0;
+    background: #04b444;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.btn_pesquisa:focus {
+    outline: none;
+}
+
+@media (max-width: 550px) {
+    .form_container {
+        justify-content: center;
+    }
+
+    #cont > div h2 {
+        font-size: 1rem;
+    }
 }

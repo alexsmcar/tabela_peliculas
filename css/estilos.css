@@ -1,6 +1,9 @@
 body {
     margin: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Roboto";
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 h1,h2,p {
@@ -9,4 +12,28 @@ h1,h2,p {
 
 button {
     cursor: pointer;
+    border: 0px;
+    padding: 0px;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+input {
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.container {
+    flex-grow: 1;
+}
+
+.width {
+    padding-right: 10px;
+    padding-left: 10px;
 }
